@@ -6,8 +6,13 @@
 !cherry-electron-dev
 !cherry-pr-test
 !create-skill
+!frontend-design
 !gh-create-issue
 !gh-create-pr
 !gh-pr-review
+!lark-doc
+!lark-drive
+!lark-shared
+!lark-wiki
 !prepare-release
 !vercel-react-best-practices

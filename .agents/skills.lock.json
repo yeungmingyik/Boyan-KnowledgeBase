@@ -1,0 +1,744 @@
+{
+  "schema_version": 1,
+  "skills": [
+    {
+      "name": "cherry-electron-dev",
+      "repository": "https://github.com/CherryHQ/cherry-studio",
+      "revision": "d33b9b0266bda30d0e4715ae16650eee7b845d70",
+      "source_path": ".agents/skills/cherry-electron-dev",
+      "installed_path": ".agents/skills/cherry-electron-dev",
+      "license": "AGPL-3.0",
+      "license_path": ".agents/licenses/cherry-studio/LICENSE",
+      "license_sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+      "dependencies": [],
+      "directory_sha256": "2cff7f7c6dca2e6e4229ae4fc1b27b5ac765b73794f22a8870a0a55eadccd7b7",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "8bd23ff4cd2019b7414f0f26942a4b0a7cf4a216357f3430ce6b5c4b6d3bb892",
+          "upstream_git_blob": "e812788e5230a746f7611b877ce498d62823ea36"
+        },
+        {
+          "path": "references/electron-instance.md",
+          "sha256": "cccc188155200efd4e1a6d3e950af8385679d681993cef0314039c0fa73c332a",
+          "upstream_git_blob": "379fd8675ce43e479325f92f4579304b2d96e3bd"
+        },
+        {
+          "path": "references/performance-debugging.md",
+          "sha256": "6b046291a6320035ee28844e93847380e91a9fb3644f012c3d52d3106f407ca7",
+          "upstream_git_blob": "9c19fd1f9aad4804aefa521adea253974b0a8bd9"
+        }
+      ]
+    },
+    {
+      "name": "lark-shared",
+      "repository": "https://github.com/larksuite/cli",
+      "revision": "cb5a3d704379552dc61e37898e5f74798783190d",
+      "source_path": "skills/lark-shared",
+      "installed_path": ".agents/skills/lark-shared",
+      "license": "MIT",
+      "license_path": ".agents/licenses/larksuite-cli/LICENSE",
+      "license_sha256": "c969fc7e3af68e6bf40b0d8dd9c3dcc377eb685a2139535b203b39fdcad739ee",
+      "dependencies": [],
+      "directory_sha256": "94bd8cdedb4c71108bef1ae562064b0b8d62d70e1912cf0ccbdf636fc30c915b",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "9fa68bb1f3ce564602c6df6c303ea4d2759de02442772f332fe5041d65720a1f",
+          "upstream_git_blob": "9e54704bcd1a494bbdb69e4142b31054e10ec1f0"
+        },
+        {
+          "path": "references/lark-shared-config-init.md",
+          "sha256": "d995546300e59284e223e9be856ff5674056900b86c9ad022c4e9b2bf0f24563",
+          "upstream_git_blob": "7c85969c04029e918f0ed60240ea447bbb56e685"
+        },
+        {
+          "path": "references/lark-shared-high-risk-approval.md",
+          "sha256": "b8bbff0c71d376564f8d6ea640686b08645d6ff4c905aa03c79882b98bd6bf05",
+          "upstream_git_blob": "1108ff8cce28894e83107285e6f6b260f4d3b786"
+        },
+        {
+          "path": "references/lark-shared-identity-and-permissions.md",
+          "sha256": "68c8f409ceeb062b4460a63ea4a8822e4150db475b7ca2f4baaf1e67162907f1",
+          "upstream_git_blob": "16335fb1050a4e9f244a969e83988329c7d43f2e"
+        },
+        {
+          "path": "references/lark-shared-output-contract.md",
+          "sha256": "8f47ada21810a83de272d1bef088ece187947c2cb0743ded7590d82d8c175699",
+          "upstream_git_blob": "95dbeadbd1adb4ef3c1fdc1f9d38bea40a4826b6"
+        },
+        {
+          "path": "references/lark-shared-update-notice.md",
+          "sha256": "6e1d08f7338721053087f8292c98302a947ee97358be71a60a7110a3b91e8d3a",
+          "upstream_git_blob": "e9804988a1b29c744aaad4e90ae00bb8389fb948"
+        },
+        {
+          "path": "references/lark-wiki-token-routing.md",
+          "sha256": "8109dd583c0ed2193621ff83f341a9c7b0af7cf711aff5e69f4790821b4355db",
+          "upstream_git_blob": "006ec87a10fde43536eb35a2847ec5faa9f2d1a9"
+        }
+      ]
+    },
+    {
+      "name": "lark-doc",
+      "repository": "https://github.com/larksuite/cli",
+      "revision": "cb5a3d704379552dc61e37898e5f74798783190d",
+      "source_path": "skills/lark-doc",
+      "installed_path": ".agents/skills/lark-doc",
+      "license": "MIT",
+      "license_path": ".agents/licenses/larksuite-cli/LICENSE",
+      "license_sha256": "c969fc7e3af68e6bf40b0d8dd9c3dcc377eb685a2139535b203b39fdcad739ee",
+      "dependencies": ["lark-shared"],
+      "directory_sha256": "0240306a5b5cdf240886b43517826a321654b57c6b9510f4ad3e9aabba0335a8",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "2786f910370662069b1b52b98508033c84baaf0bd7b0bae177426ece4ceafacc",
+          "upstream_git_blob": "605009709a9e185da4c7015dde83b741980f3f86"
+        },
+        {
+          "path": "references/genres/business-analysis.md",
+          "sha256": "8aaab9e07737ea36dca4427778cc28af0087abb90710c1f2806bb1a51962ef78",
+          "upstream_git_blob": "ca92a9b9f1cabd6ccbe9a748b17b06123a042c4d"
+        },
+        {
+          "path": "references/genres/data-report.md",
+          "sha256": "ea0cb3df6c9b466bfa16eb0090a0a91965ecd242dacdd903d0cffb20f9061cbe",
+          "upstream_git_blob": "f0d7a86fa1b0a0e8024df207b98c2c1a63172d5d"
+        },
+        {
+          "path": "references/genres/email.md",
+          "sha256": "8a83a390d1736991f69f66e7dda5a748da1bda925be300c01e240e0bcf47a82c",
+          "upstream_git_blob": "1fb8b0c99dac15df082ac639c0192436990c5baa"
+        },
+        {
+          "path": "references/genres/execution-plan.md",
+          "sha256": "e00d7da0b44bb375880e9fd3bfc9a5e684321aa9e19c3adca407669c4bae84e6",
+          "upstream_git_blob": "e84872fd396b1cb32abd5ab06da058afb70a5b26"
+        },
+        {
+          "path": "references/genres/formal-doc.md",
+          "sha256": "15812640cd1de50cef24be6d36658ddaaaa623ea214eb2df820d92eccc0efaa6",
+          "upstream_git_blob": "2de096db132f50685c251d84ee44929767e6969d"
+        },
+        {
+          "path": "references/genres/meeting-minutes.md",
+          "sha256": "fb46dc9e97b7b5c8e3261c280bab6ff5366b9ac72fa64d50416365dbde4b868c",
+          "upstream_git_blob": "f74bef3047f27781d6fdb7fc9d821ca321d20b4c"
+        },
+        {
+          "path": "references/genres/memo-brief.md",
+          "sha256": "e4958eff02c053002a2664da460cb465d78db097cfe2a1add3969b885d3e57f7",
+          "upstream_git_blob": "53b1b5fa4ef6c4d7e61c7744b12f489147c59b9c"
+        },
+        {
+          "path": "references/genres/official-redhead.md",
+          "sha256": "97dac887c22f55f46b825f25053938d74bc8a1abcfed3b08ec4d3ca04105941c",
+          "upstream_git_blob": "589ad684fa9fafa5108a280289388bb55e93c8b4"
+        },
+        {
+          "path": "references/genres/prd.md",
+          "sha256": "0347957894ac879e8a4463d296b0d1f9386bb7274a6600506ca44b86e518aca3",
+          "upstream_git_blob": "b1e3c5bf7e4728b120ff0f3f7a3fdbfab8506a72"
+        },
+        {
+          "path": "references/genres/proposal.md",
+          "sha256": "ba2e2249a6f56d6e9518253c20654dad1e300d5d009a07da5ec6122db57d4eb8",
+          "upstream_git_blob": "64e454a67f179ba4615b6083c4ff9a29bbb4b6dd"
+        },
+        {
+          "path": "references/genres/research-report.md",
+          "sha256": "93d14d00076783a140b21424e91272cb8f0cca9dd17526be0bd4477431f7efbe",
+          "upstream_git_blob": "02e98f216dbf14436d0fc12c1fc3d99f593dc603"
+        },
+        {
+          "path": "references/genres/retrospective.md",
+          "sha256": "86bad301a6c207f7243e3690fd0f6794463c9a9d2fd41a3e287fa733cfc0ae8e",
+          "upstream_git_blob": "25926de72b783ff1c2f6d0ca2075460f5e8b61a1"
+        },
+        {
+          "path": "references/genres/route-consumer.md",
+          "sha256": "ea4291f7378204a09ebc89b5a480dca3d3389e06ec0bb6e0607ad9614ac0e7af",
+          "upstream_git_blob": "48c334340d518abd362ad4e752ae4491371cc344"
+        },
+        {
+          "path": "references/genres/route-creative.md",
+          "sha256": "40dbd02cca3ba40d48de68414a8d450e46d233c98cf0dde1dc9b389ffd45e3ff",
+          "upstream_git_blob": "d1ecaf17bad2aec85053b6a887fa5f37f38276f2"
+        },
+        {
+          "path": "references/genres/route-knowledge.md",
+          "sha256": "b052d66f3a3a3cba4900f921cc9eb2346dbbe624b62898e185788cf38b8608d8",
+          "upstream_git_blob": "57cee81d5b34f0b31c3976345a48121ab51d0a97"
+        },
+        {
+          "path": "references/genres/route-marketing.md",
+          "sha256": "6ea22d7a5eaadde21ea11e484aba71492dca66428824639a20dad20d9243a787",
+          "upstream_git_blob": "b991317fff865e90293a14977f3cf60f7d0140f8"
+        },
+        {
+          "path": "references/genres/route-media.md",
+          "sha256": "82bef9147b59e0a6cfd1321718085210cccc484c07885630ee2ac788eb2ce8e9",
+          "upstream_git_blob": "6ff646499decbb5a9cee003a42c72ae7bb9d42aa"
+        },
+        {
+          "path": "references/genres/route-opinion.md",
+          "sha256": "87ff6fedcbd8584cef24407f434935c0fd481f58217d7e5ab8330be86d6c2dad",
+          "upstream_git_blob": "4e87f0571da921b6aa5bbb5c7358fa1aa913a145"
+        },
+        {
+          "path": "references/genres/route-personal-brand.md",
+          "sha256": "ba942789e91fe3239cec092a6556b2bb8a1452bb0ca29bf93dc139c2700b71cf",
+          "upstream_git_blob": "de735b2962b0bc68fcaa78d224f2b5aab33b050f"
+        },
+        {
+          "path": "references/genres/route-platform.md",
+          "sha256": "5065bea6370a87183ca7d612f232da61be458b7d35e6c4ce0b08d0a82498a2c7",
+          "upstream_git_blob": "8c28bdd0739c32c233a211a1bf319b4843a4622a"
+        },
+        {
+          "path": "references/genres/route-report.md",
+          "sha256": "441ac715a3038031962405c581741c1ff3aaa96fd057d3bd8bb7bd09cd1e3b0b",
+          "upstream_git_blob": "3e88d40b046c47912cab27f04db6127e993bd45d"
+        },
+        {
+          "path": "references/genres/route-workplace.md",
+          "sha256": "af06e57228e2a620d8be29b8208b1bb603101468c45d1ca5ee7a3d02491c5bd9",
+          "upstream_git_blob": "ae17c76e8b189252efd716931cec62c7601ac645"
+        },
+        {
+          "path": "references/genres/sop-tutorial.md",
+          "sha256": "a7f79a8283725d0531675151025960c8cf76930adc3113f388847bc04c94fbe6",
+          "upstream_git_blob": "65b3a5fa3f5a7fec73e4c912ec068bc8a9113da9"
+        },
+        {
+          "path": "references/genres/technical-doc.md",
+          "sha256": "8af772cdc88a2dbaccd7af709de3fa25a4dff3055e6154af480d5c3e44aba67a",
+          "upstream_git_blob": "82246cb4a1c0b6b459af9ee42074cfae14f80ba3"
+        },
+        {
+          "path": "references/genres/wechat.md",
+          "sha256": "9ab22f27d0c6207724b8b309f2ed114a93c9a756c8e16da84a78f68c10018efc",
+          "upstream_git_blob": "618b16f124f0daa8cb3bdaf7ba4b6d217f5a86be"
+        },
+        {
+          "path": "references/genres/weekly-report.md",
+          "sha256": "862b8f5eb08fc41d2994e4e1158bba0042d9fbe2274c574ebde892ee5dc74d1b",
+          "upstream_git_blob": "6b453baff98afdf9f2c00762e4b53b796131124e"
+        },
+        {
+          "path": "references/genres/white-paper.md",
+          "sha256": "cda3797a71149cc1f2f4fe7e6c471ce8be6adb05cbb180ba4a6af70392e5c11c",
+          "upstream_git_blob": "85336336b6ca3dffb9494ef3a3b64f86d51ecde1"
+        },
+        {
+          "path": "references/genres/xiaohongshu.md",
+          "sha256": "d9121277c04df2196d4c6f2c0e1c4ad3f6fc15af4f09b8a83e689d9144542e92",
+          "upstream_git_blob": "584ec6298bd7b1b778aa25be76333f50331eff99"
+        },
+        {
+          "path": "references/lark-doc-create-workflow.md",
+          "sha256": "f664472c088ac09d8b4b69aa3a49f35c395f1892078b637d7c7812cbc8f9fcaa",
+          "upstream_git_blob": "1be2b97d187cfd98ad01a1b2f8bc996ff3669897"
+        },
+        {
+          "path": "references/lark-doc-create.md",
+          "sha256": "4add00b26e81207515ba4e3319e690a6143f604dea72444d97d49931191107bb",
+          "upstream_git_blob": "974020bea2ba21edda2aa0b0c04df25a94c9eefe"
+        },
+        {
+          "path": "references/lark-doc-fetch.md",
+          "sha256": "0200e8231902b7c532bcec036ab83fb5b6f928f689ed16c0c906217613c92df6",
+          "upstream_git_blob": "ab6d5cc0cbe9472e5bd53c3a64a7ac528171bbcb"
+        },
+        {
+          "path": "references/lark-doc-history.md",
+          "sha256": "a67b4beaacef43626088f92de297fb37021cd1daf829763bbbcb419714854850",
+          "upstream_git_blob": "ff4b3d6cb5e64c2009575a47cb87c94e81d6f348"
+        },
+        {
+          "path": "references/lark-doc-md.md",
+          "sha256": "74d062a4ac6d436141f4a90f87cbecd45d9f6d8b0d34f3e04077653175dc2e36",
+          "upstream_git_blob": "c115144122ef32d988f17772508791d6255747b6"
+        },
+        {
+          "path": "references/lark-doc-media-download.md",
+          "sha256": "246ef6cfdbd607683792f806e843189170ecbd94e5cfc8acd02cbe43030d5c33",
+          "upstream_git_blob": "b5318cdd6b39ebec6959173ce4bb95f0699c9980"
+        },
+        {
+          "path": "references/lark-doc-media-insert.md",
+          "sha256": "715c0ffefbca373c2554f3e60ca907b0a28166469f9eecd124418faac9c1ddae",
+          "upstream_git_blob": "6b87755f49962cbd14654508ed7b345aa31869e9"
+        },
+        {
+          "path": "references/lark-doc-media-preview.md",
+          "sha256": "68eff43a4a1f1fcba852a80332b521ba2ce5041f051fba2d6ec25c246886e919",
+          "upstream_git_blob": "a8d576f09b60437b669770d2c96ec03340002d66"
+        },
+        {
+          "path": "references/lark-doc-mindnote.md",
+          "sha256": "a239f58aa9d832623d79943a8f8268783da3c07bce1816060e2f01b0d1278e92",
+          "upstream_git_blob": "3e3f26bbb79404b36f85f556db32787e32b8034e"
+        },
+        {
+          "path": "references/lark-doc-resource-cover.md",
+          "sha256": "3d453cc82978d7a4f8d8fad08e80783c209cf7ff7b1bbf3cb56c23f51aa4e457",
+          "upstream_git_blob": "2ac56fb70781da475e7578940248de9a533efbc5"
+        },
+        {
+          "path": "references/lark-doc-script.md",
+          "sha256": "7fb8a1d3031e49ef076b0f3a705b8f6527d2cd31f4797a29f4fb6adc7c29aaeb",
+          "upstream_git_blob": "a225d9b7ba991c27bd61cc877b821f64a9eea6be"
+        },
+        {
+          "path": "references/lark-doc-update.md",
+          "sha256": "1325ceac3355401486cf46a7462cf083b4dada00e7c07e03c1084cea2c7f7c6d",
+          "upstream_git_blob": "18234c8d323d25d04bc3b1b91ff7153cf8573a7b"
+        },
+        {
+          "path": "references/lark-doc-whiteboard.md",
+          "sha256": "86dd68d27a50914c10af97abc040934ddee38521fb555a1d019ad9b4bb0286ff",
+          "upstream_git_blob": "c383a40fb2093e8b82f175d58bf78b1892998049"
+        },
+        {
+          "path": "references/lark-doc-xml-extended-blocks.md",
+          "sha256": "893faaf0a757cd43b9b2031b695982191e56c6469af1a47e1e90b5c1fd342110",
+          "upstream_git_blob": "5bf539235b1a5164fdd5174a0a3ddfd191e8420a"
+        },
+        {
+          "path": "references/lark-doc-xml.md",
+          "sha256": "111e58ffcd10f0d333bb02c2c9b97c8c3cec4f20b5fbd0cf5c30132880ced4a5",
+          "upstream_git_blob": "fb562013f9eb68a1c4b8eb8202c3f0a6f39aa2a3"
+        }
+      ]
+    },
+    {
+      "name": "lark-wiki",
+      "repository": "https://github.com/larksuite/cli",
+      "revision": "cb5a3d704379552dc61e37898e5f74798783190d",
+      "source_path": "skills/lark-wiki",
+      "installed_path": ".agents/skills/lark-wiki",
+      "license": "MIT",
+      "license_path": ".agents/licenses/larksuite-cli/LICENSE",
+      "license_sha256": "c969fc7e3af68e6bf40b0d8dd9c3dcc377eb685a2139535b203b39fdcad739ee",
+      "dependencies": ["lark-shared", "lark-drive"],
+      "directory_sha256": "e91ecdb1152906a5b09cf7d52070353b6e185ab81dc81c0411cf43d4316140e8",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "736cd467c6099df4f71398460417d0247ed54b50510c82ec18d82d02a128c684",
+          "upstream_git_blob": "2cbc6bf1fb4b3c1337ade5fe74468316ee84fa83"
+        },
+        {
+          "path": "references/lark-wiki-delete-space.md",
+          "sha256": "b50ad54c9d3ea49e887816dcb3f19018d5f8e90636eb6a0f9c1f3c72b2671ac4",
+          "upstream_git_blob": "eda41f4f277c56dce410ad274740a94d95bfa2f4"
+        },
+        {
+          "path": "references/lark-wiki-member-add.md",
+          "sha256": "8bd78edd8099a33337b2d18745ec9d37f0fb793f6fe3e58ff99751951cb254c6",
+          "upstream_git_blob": "3af2d88853ed000765c8045952c5d4e1e194e782"
+        },
+        {
+          "path": "references/lark-wiki-member-list.md",
+          "sha256": "3846bd529361983f167e14ba993de89a716263500703db7812624fdd99ecca14",
+          "upstream_git_blob": "ac41b6a18890e9f0de6c0d27dbadadce1ad8ca71"
+        },
+        {
+          "path": "references/lark-wiki-member-remove.md",
+          "sha256": "03249541afa9eab994f9775e7cccbdfb012643bc1e5b467aabd7395aa1012fc7",
+          "upstream_git_blob": "f191c8634999fde153a4366213c0ae687a3197d8"
+        },
+        {
+          "path": "references/lark-wiki-move-to-drive.md",
+          "sha256": "8d43928b24ec5206220b5181ac107f0538a4b7606b434af8ca54000bc3ecff92",
+          "upstream_git_blob": "5cf1bf022d9345843990980623e3712ad6e685f1"
+        },
+        {
+          "path": "references/lark-wiki-move.md",
+          "sha256": "4bf29ef7d1349712920dc14050e00376cb2b0a06903e7d79b466bc6d6b0623fb",
+          "upstream_git_blob": "090805ce09f7372e13e4c979004883e6bd07bd67"
+        },
+        {
+          "path": "references/lark-wiki-node-copy.md",
+          "sha256": "d6c5de760b0f400e3ae04dff5b3cc11e2d40b7a5cac769695ee2cacb40f1771f",
+          "upstream_git_blob": "3e0557b72b7ef56061d7e3e17c187dd294693266"
+        },
+        {
+          "path": "references/lark-wiki-node-create.md",
+          "sha256": "8ce3fd63718c36d1efad57089bcfa981dd447a026e0a970d8d5929f9d30ad65f",
+          "upstream_git_blob": "2f0d52322ca59877b2493c957c7544094e3d1aac"
+        },
+        {
+          "path": "references/lark-wiki-node-delete.md",
+          "sha256": "316d3ab994ed3aac99d0f1ddc59dfe818c60638e3f30019f41105f4754dca2ab",
+          "upstream_git_blob": "970f51f49cae772696450741b615c151e133cd3a"
+        },
+        {
+          "path": "references/lark-wiki-node-get.md",
+          "sha256": "74d3c17417c250bbb9fa5dc2b2d609430d49daecfc071afaaf617b5dedb3fb57",
+          "upstream_git_blob": "a02511bfc312747d02535badf6fdc5625c0d8641"
+        },
+        {
+          "path": "references/lark-wiki-node-list.md",
+          "sha256": "771cce93c4755916f92136e283d2b85d0e901a505e852c5e8c9d6f70787082d6",
+          "upstream_git_blob": "7e01c7d740cc33bc70b5dc3263b6f5691d16834a"
+        },
+        {
+          "path": "references/lark-wiki-space-create.md",
+          "sha256": "b936ab670f525e6e9433ee6b145ed2eafee296df2c3062abdc651000a88c86ad",
+          "upstream_git_blob": "f560b5efafa29b27d71c81ec8e0c2b01aa93f4a6"
+        },
+        {
+          "path": "references/lark-wiki-space-list.md",
+          "sha256": "d4921cfbfaba564217f214b6f87daf7e3ccbfda5b9759f73ab6a999c682913ae",
+          "upstream_git_blob": "ab3d657a1402d20d1fced59138f593267e1dbd48"
+        }
+      ]
+    },
+    {
+      "name": "lark-drive",
+      "repository": "https://github.com/larksuite/cli",
+      "revision": "cb5a3d704379552dc61e37898e5f74798783190d",
+      "source_path": "skills/lark-drive",
+      "installed_path": ".agents/skills/lark-drive",
+      "license": "MIT",
+      "license_path": ".agents/licenses/larksuite-cli/LICENSE",
+      "license_sha256": "c969fc7e3af68e6bf40b0d8dd9c3dcc377eb685a2139535b203b39fdcad739ee",
+      "dependencies": ["lark-shared"],
+      "directory_sha256": "5209e133cff60d463fe9d8ac10f20daecbdba5125cbdecf4b4131da3a39a86b0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "b140cd55b62be7f001384fb47627dc269ef08db3b943d0eb8c6aa4ef1bc9b685",
+          "upstream_git_blob": "2a1666cebf07c8c66feabb73f1705b9f9cf509c3"
+        },
+        {
+          "path": "references/lark-drive-add-comment.md",
+          "sha256": "709c93641b4209ed0f91634ff24cb0a2adec424f541ccadcbd30bb264afc91fd",
+          "upstream_git_blob": "0cfa51e85a96d86f21faec5c939f84988a1569db"
+        },
+        {
+          "path": "references/lark-drive-add-reply.md",
+          "sha256": "51ab4b710b2c7ab0d1aeb018e112892c0067f8563eaba69946309eb34941fffa",
+          "upstream_git_blob": "d9be7c3d249177bb398882a583ed6a3ccf029586"
+        },
+        {
+          "path": "references/lark-drive-apply-permission.md",
+          "sha256": "d1faa3462578811bc1e0aee0b312849a1bedf5230d0f0b3836455f84f1c59a88",
+          "upstream_git_blob": "5c071ba6fa384a04ff3da7b107116511b1cc6871"
+        },
+        {
+          "path": "references/lark-drive-batch-query-comments.md",
+          "sha256": "cf925c31d729025483b36caf7478edba0545bc00456e9dd3555aa6abcd9f6bc4",
+          "upstream_git_blob": "d49a2e9550b658df4f3f09b48055256b5d318e63"
+        },
+        {
+          "path": "references/lark-drive-comment-content.md",
+          "sha256": "7abde1590bc6c66e4a81a8303b5d21a081f3b432546a7095621dbb58884a19ce",
+          "upstream_git_blob": "790ebd3ec57132e17097cbe2fd0a33233658dc5c"
+        },
+        {
+          "path": "references/lark-drive-comment-location.md",
+          "sha256": "6004f3128c1e61794b879de8eb3609641f3dee573c44359d097f0d21affcde1e",
+          "upstream_git_blob": "ab6a037ee6eddec4a95dd09d9074c068617fee64"
+        },
+        {
+          "path": "references/lark-drive-copy.md",
+          "sha256": "12eba81595acafa0b7e66cc0cdb2ae41b855ed0e06c516d892b5f5c5c060acda",
+          "upstream_git_blob": "75a7e3cfbdbfefb2998df5882cbab8e92ee441b9"
+        },
+        {
+          "path": "references/lark-drive-cover.md",
+          "sha256": "40ceea538c1c44be274c2bab4753f45596cfbea72d0d7a6721476a3f494a005e",
+          "upstream_git_blob": "517955ee2d4345418f07a9ccbdbab3ff26f6fdbe"
+        },
+        {
+          "path": "references/lark-drive-create-folder.md",
+          "sha256": "edd44594a615bee9450b4f2f3728138803cb81f1bfde52f15f822bdedcf89275",
+          "upstream_git_blob": "eaf87bb3b8d9784b74833d454a4612f084f810aa"
+        },
+        {
+          "path": "references/lark-drive-create-shortcut.md",
+          "sha256": "17f928dc15ab6efdfaae2cd77b96fdf399fef481d036b90474550d9a6f18ea9b",
+          "upstream_git_blob": "a33826139d22078e98f1db576c2d40b52424d33b"
+        },
+        {
+          "path": "references/lark-drive-delete-reply.md",
+          "sha256": "97e385497ab3deb3dc3e6556d8810f73201acd77fb06e1ede0ed1224e6c855db",
+          "upstream_git_blob": "f1f7b02dc2bbf95131acae706cdcc177eef5f2f0"
+        },
+        {
+          "path": "references/lark-drive-delete.md",
+          "sha256": "f0d0f62ed1faaa0aff54d4b35c5e31a85d73f06998cc7fee5e8113fb3432ff9a",
+          "upstream_git_blob": "635515fc602b276b5c18f4d2084e5bc7910cd75c"
+        },
+        {
+          "path": "references/lark-drive-download.md",
+          "sha256": "cb34a4261386402032bcc99e1063bf5ab29fbaa590f1493d72e6b2e22e749d1b",
+          "upstream_git_blob": "15262f5a1514e42c628fa4795d1c6ebfc9d9610e"
+        },
+        {
+          "path": "references/lark-drive-export-download.md",
+          "sha256": "4284a390de4e5e2ade9f0d8e43eeee5d519d5694405bfec5c02f316d59acfdcc",
+          "upstream_git_blob": "a3a6363828883ec2014c66df017dfcaafefbf35e"
+        },
+        {
+          "path": "references/lark-drive-export.md",
+          "sha256": "7449adedf2fbb8790bcc991a95fca1aab8962fa1525d2a0ca1e6618c9eb31569",
+          "upstream_git_blob": "36eb6d768ce59d0adc17ab243fde6f0138078006"
+        },
+        {
+          "path": "references/lark-drive-files-list.md",
+          "sha256": "f19683396d75b1f245b7332010edaaa19b98d90eb143563980abeef125bb441d",
+          "upstream_git_blob": "0b3d19a26e1cb7c8e5d1a6b6cfee37aba7b34f4f"
+        },
+        {
+          "path": "references/lark-drive-import.md",
+          "sha256": "51ac016f595bd9a4ce41b62f70b5ede5cf1540c95b536a31ffa02fa264155f8e",
+          "upstream_git_blob": "28d712664ef180f24339d49c0ac5b0425a5a779d"
+        },
+        {
+          "path": "references/lark-drive-inspect.md",
+          "sha256": "2157a5f426911afcc4110dff66b4743e1804fc08da5c46d7ad9162c98add2841",
+          "upstream_git_blob": "cc1ca4b7bcc62b45f89582e1a41b8bfe725d9af0"
+        },
+        {
+          "path": "references/lark-drive-list-comments.md",
+          "sha256": "982c93d29729350fda312c84d54ff5d5f2ce99f0a54b8b253bf35dd4502fb0f6",
+          "upstream_git_blob": "b22422e9022d730c235b90d01895fbfabd0c69de"
+        },
+        {
+          "path": "references/lark-drive-list-replies.md",
+          "sha256": "fa83e4a782de5a6da3aaecf6ac1fff639e6ef8bb8ca5ccef2c537f1d75bfcb57",
+          "upstream_git_blob": "aee37aecd44993e81acf0f1556a6f86662d0b643"
+        },
+        {
+          "path": "references/lark-drive-member-add.md",
+          "sha256": "179b021058cb23a7188264417564eecf89ecf9b092dc2a8769d8d48f8e5fa78b",
+          "upstream_git_blob": "912c810cebaba366051c9b2856a2a5948b9e2599"
+        },
+        {
+          "path": "references/lark-drive-member-list.md",
+          "sha256": "bed81dedf8af61a976db095642b823eafcb00fe3b5a679893708277b0cf39b29",
+          "upstream_git_blob": "47cdad397c1c775bbae95975b0b252962823b282"
+        },
+        {
+          "path": "references/lark-drive-member-remove.md",
+          "sha256": "b00b7af1ad840df16fc6b11cf89897cbe349fab737eba28876556beb0506663f",
+          "upstream_git_blob": "204d113a63d81ff8625fb3d4f904805b226c131c"
+        },
+        {
+          "path": "references/lark-drive-move.md",
+          "sha256": "d1ca17fa89a4fb48371e07f863ed1e3dda4962b264016a706560e9d262a5e96d",
+          "upstream_git_blob": "bc82d2c05a30fa0c53d428412c1b911bbbc97277"
+        },
+        {
+          "path": "references/lark-drive-permission-get-setting.md",
+          "sha256": "2ef00117158fdaafbf7830fbd705077daee48ebba5c958d3159e373ffce090d9",
+          "upstream_git_blob": "331045dc81b8857ae852309caf261e8b3cd03b23"
+        },
+        {
+          "path": "references/lark-drive-permission-guide.md",
+          "sha256": "1fe72dfb6c6ab8fe6e45c8586b78f16ab386c50f144cddc5b10aa895f2ee0641",
+          "upstream_git_blob": "d4e31331e3cb792c1c8d72ffbfe457d6d6a5bbdf"
+        },
+        {
+          "path": "references/lark-drive-preview.md",
+          "sha256": "ab262491408c7000e527789362f4cb32eaa5f5c43ac3426066a14c8394376343",
+          "upstream_git_blob": "15d40e71cfadcb2c78ebbf469e78bfb1aa9b2e44"
+        },
+        {
+          "path": "references/lark-drive-pull.md",
+          "sha256": "0e0cf14725832f5339831eab775766b30c2bcc604fce53630f69af09aeefb78f",
+          "upstream_git_blob": "2fb6c078aa88ab52d43f65a6a3f46a38855334ef"
+        },
+        {
+          "path": "references/lark-drive-push.md",
+          "sha256": "3a63eabb4c490257ca05efcb225dfc7da0ef1bbbbae8707f575fe2c736939a2e",
+          "upstream_git_blob": "8bce1000cdcd3036d0849240b0b56d9946bdb539"
+        },
+        {
+          "path": "references/lark-drive-react-reply.md",
+          "sha256": "a2dec640a85958e666d557c273afef497ec9c6028e4c759ccd44423e0b61a3ff",
+          "upstream_git_blob": "5cad18621ec72cc5df09c5e9376a857694688589"
+        },
+        {
+          "path": "references/lark-drive-reactions.md",
+          "sha256": "a4b0213b77f504584d9ea00d4732eb51231c38be312d0ac1c4b6a0f7e84b6a9c",
+          "upstream_git_blob": "c07cf3e727b2b7d1cdca6d02b24b3a972bccf108"
+        },
+        {
+          "path": "references/lark-drive-resolve-comment.md",
+          "sha256": "a48148ddb6d720ec60be59dee67968b263f80af878186a1e07c187c7c89fdd82",
+          "upstream_git_blob": "b9f663eaba5a5c210eb6926c005d44ea00242153"
+        },
+        {
+          "path": "references/lark-drive-restore-comment.md",
+          "sha256": "ebabc65787adb79df5843a93cf5105191574d246b6356a66915c2f33aea3db22",
+          "upstream_git_blob": "41e3e9d48b2b6ce96f4c503271e7962eb865e9a1"
+        },
+        {
+          "path": "references/lark-drive-search.md",
+          "sha256": "277b6ee899492b77adadfc7f876c67759ec53be45a3bb7bd111bbad95851cd44",
+          "upstream_git_blob": "4a463ad7ebaf83e2899fb578e7565f19bbe21736"
+        },
+        {
+          "path": "references/lark-drive-secure-label.md",
+          "sha256": "08569ed5612347a0cfae4ae423b28e94fc090cf0d4a5881b577cc05720cb3619",
+          "upstream_git_blob": "b713e5c521e93589f09e5fab85c5f5ace57c6e35"
+        },
+        {
+          "path": "references/lark-drive-status.md",
+          "sha256": "c1e8573c471415246175534a68f0acc2aa2205a650a6f1b7a8a17dbf4f264837",
+          "upstream_git_blob": "4de393d04ac5ecfd2ab7940bb695ae386a84cbdf"
+        },
+        {
+          "path": "references/lark-drive-task-result.md",
+          "sha256": "cf92a0972a60265cc423f1c17eeddc601b4656162766678002ca9f49dd934fcc",
+          "upstream_git_blob": "5b4fe49cfda22a2080f5c0e8f7731b050179bda9"
+        },
+        {
+          "path": "references/lark-drive-update-reply.md",
+          "sha256": "095e7e6a3c9299eb96ab43344bfcefe3f86c8bacb995e3264d354f486e29d217",
+          "upstream_git_blob": "7ec6c3de7a2dfec3555a98f97c4f7fb5e7e36b1a"
+        },
+        {
+          "path": "references/lark-drive-update-title.md",
+          "sha256": "a0d91e70996eec9a1b645ae666427b6b544226e899dbc4443b601cc572d63a94",
+          "upstream_git_blob": "097d9ae492fb4c78b74a1a6ca42f7eebc1a9397c"
+        },
+        {
+          "path": "references/lark-drive-upload.md",
+          "sha256": "3a62266e10a61c6b87ccb08df1f63b8412314c7d33b617a44a0f0d4ce856451b",
+          "upstream_git_blob": "1a16783ee85313df4254b97029005353e63b2901"
+        },
+        {
+          "path": "references/lark-drive-version-delete.md",
+          "sha256": "1969878d0568ab3514146e2269e921959026d5b40df97fa3731af2920bb99d0b",
+          "upstream_git_blob": "0203c693f331a1c5e9752998e37338b5d133d928"
+        },
+        {
+          "path": "references/lark-drive-version-get.md",
+          "sha256": "faa215c41a4b0ac996fa370a9894024ce949c528e32f31ed051e873388c8ba57",
+          "upstream_git_blob": "98ed4bd4b2ac39fe399aca714c4147932d6e4d86"
+        },
+        {
+          "path": "references/lark-drive-version-history.md",
+          "sha256": "bb19552f184c7dcc0c0f0238b2cdb7b2440a603c623a45d6acb69bd2656772aa",
+          "upstream_git_blob": "4b09d56efa822fba3b2209ab7b372067db0a9e0c"
+        },
+        {
+          "path": "references/lark-drive-version-revert.md",
+          "sha256": "ad32ae72eb3a02c8bf35f15428d05f804be88af66364bc442540a77f73e83b71",
+          "upstream_git_blob": "e80d6564423601d86c7f0db52c2e009c1b440ce3"
+        },
+        {
+          "path": "references/lark-drive-workflow-knowledge-organize-analysis.md",
+          "sha256": "b193be51d0a7656ef910ba14311acbf62ef0788e7751c26679e97583b1bedfd5",
+          "upstream_git_blob": "01263fcb3c60ba7a1685051eec8427559ca3c090"
+        },
+        {
+          "path": "references/lark-drive-workflow-knowledge-organize-discovery.md",
+          "sha256": "9630d49fe29be3a0a94bb91f5f4ce6997473e3398893cee65b996c6a430dcdb0",
+          "upstream_git_blob": "358c72c004df4293b0e76e1ca6908a258056603b"
+        },
+        {
+          "path": "references/lark-drive-workflow-knowledge-organize-execution.md",
+          "sha256": "dcc6ba654ea1962728dcbba38be2aaa3e88727c77299bdb34e73cc5cc0877f4d",
+          "upstream_git_blob": "9469f79e8b74163f08f11c03260323ecc74fc91c"
+        },
+        {
+          "path": "references/lark-drive-workflow-knowledge-organize-planning.md",
+          "sha256": "8d4e41a33087cc0330a0535877a5e5910c2ca4b2ed7d3e6243ffa78614c1320f",
+          "upstream_git_blob": "5e50c81ff1782cfcf9e354fb4ddffc3c729bcf26"
+        },
+        {
+          "path": "references/lark-drive-workflow-knowledge-organize-rollback.md",
+          "sha256": "6c413f2dd193e626f1c5e02dbb52bc90500af931ee8b598aa4d10636c9c6180f",
+          "upstream_git_blob": "173cdac10524b72ed85fbfa110c27ceaa5888f3a"
+        },
+        {
+          "path": "references/lark-drive-workflow-knowledge-organize.md",
+          "sha256": "e91f2130225d631f82658cf3474aae51ad0e43e46f2a9de5e2bf187478e8123b",
+          "upstream_git_blob": "b24e76190e96eb14ce089ae3185cfeec00468672"
+        },
+        {
+          "path": "references/lark-drive-workflow-permission-governance-commands.md",
+          "sha256": "06885f0fce3d8e9f674cb2115ba97161cb67064705dbaec988c6dc2e5b8c7202",
+          "upstream_git_blob": "1693ed9a7f0091e923f86fed436c020ee2d305ed"
+        },
+        {
+          "path": "references/lark-drive-workflow-permission-governance-outputs.md",
+          "sha256": "84fd75ff213c56639199f3bf20abb346852f90c7dd9437d48089dbcc5bc1a549",
+          "upstream_git_blob": "119075d76121735756502763e06c73a4c4730e2b"
+        },
+        {
+          "path": "references/lark-drive-workflow-permission-governance.md",
+          "sha256": "c81802223811416676441204e309f6fc1ae2afd20431a5fc6ca8d730d5665f4f",
+          "upstream_git_blob": "49832e8ba91368a6778cff758a26f49e3da69f9b"
+        },
+        {
+          "path": "references/lark-drive-workflow-topic-move-collector-execute.md",
+          "sha256": "5234b3c628ea44dc30cc78c315195999fded79d0d0ec67d5832c47ce74ca7440",
+          "upstream_git_blob": "6f0e6aabea126116ab09ee759b6e7104e34d789f"
+        },
+        {
+          "path": "references/lark-drive-workflow-topic-move-collector-recall.md",
+          "sha256": "2b2e36ca2f516f5e440c7c6f90c52ab29efe237e085240d1b27f56fe4ad96f05",
+          "upstream_git_blob": "ec35964b44bcaa8c6f19c2cad6cf70d3efa8bc98"
+        },
+        {
+          "path": "references/lark-drive-workflow-topic-move-collector-resolve-verify.md",
+          "sha256": "6253e82c22a94bfb57f62a502dedcdc82988d881c80b4870b9d56df56814356a",
+          "upstream_git_blob": "b4b26249809cb5d101bf6ff8cd2805234388ad61"
+        },
+        {
+          "path": "references/lark-drive-workflow-topic-move-collector-review-plan.md",
+          "sha256": "61772e75afaafa0d2dedfccde5199ae0c6581a564796f25984682a870f96715d",
+          "upstream_git_blob": "cbae8e690329919856219b9c7d2cbc242b373132"
+        },
+        {
+          "path": "references/lark-drive-workflow-topic-move-collector-setup.md",
+          "sha256": "846856cc0e2eb2caa75551a6cfd0c0ad7282096cd4840f824e914c8ebf71e20b",
+          "upstream_git_blob": "19571fc7f87d0798c26e99b974d9f52529c9bb83"
+        },
+        {
+          "path": "references/lark-drive-workflow-topic-move-collector.md",
+          "sha256": "cdf51e054caffaa94920c5e3765f2d7660b9619c1d5b1462513db85b011fe831",
+          "upstream_git_blob": "e358a0e7da5758c0026ca94697016ab4cd1a4a68"
+        },
+        {
+          "path": "references/lark-drive-workflow.md",
+          "sha256": "43e2e855f0e4f5713eefc6edca607777a8da82cc05eb09ba655977befb77f0e9",
+          "upstream_git_blob": "30707769a9a83701c5b2d2a561bacc8b57ebefd9"
+        }
+      ]
+    },
+    {
+      "name": "frontend-design",
+      "repository": "https://github.com/anthropics/skills",
+      "revision": "34040c9c568585f6929bedeaad110ad08f079624",
+      "source_path": "skills/frontend-design",
+      "installed_path": ".agents/skills/frontend-design",
+      "license": "Apache-2.0",
+      "license_path": ".agents/skills/frontend-design/LICENSE.txt",
+      "license_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "dependencies": [],
+      "directory_sha256": "89a6e59de80320a32e8b4c597a329ef3c503f624a2e68874bb0475dfb66dbf4b",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "upstream_git_blob": "f433b1a53f5b830a205fd2df78e2b34974656c7b"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+          "upstream_git_blob": "a5333457c414d20d625f307df945842c0952ecc3"
+        }
+      ]
+    }
+  ]
+}
