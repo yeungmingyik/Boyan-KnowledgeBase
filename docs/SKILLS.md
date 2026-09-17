@@ -27,6 +27,24 @@ Cherry 源码自带的其他技能随基线保留，名单见 [public-skills.txt
 
 上游文件保持原文。更新时核对提交、引用资源、许可证和脚本行为，更新锁文件。禁止自动跟踪上游主分支。
 
+## 可选技能文档引用
+
+未安装的飞书扩展技能通过 [引用清单](../.agents/skill-doc-links.json) 关联到固定上游提交。该清单包含来源文件、原始链接、上游目标路径和 Git blob；不安装或启用对应技能。
+
+`pnpm docs:check` 校验已登记引用的来源文件 SHA-256、技能锁定版本和精确链接映射。正文中的其他本地链接必须存在；登记未使用、来源变化或版本不匹配均导致检查失败。行内代码、缩进代码和代码围栏中的语法示例不作为正文链接检查。
+
+登记或更新上游引用后执行 `pnpm docs:check-links --verify-upstream`，联网核对固定提交中的目标路径和 Git blob。常规文档检查使用本地锁定信息，不依赖 GitHub 网络访问。
+
+| 可选能力 | 固定版本文档 |
+|---|---|
+| 电子表格 | [lark-sheets](https://github.com/larksuite/cli/blob/cb5a3d704379552dc61e37898e5f74798783190d/skills/lark-sheets/SKILL.md) |
+| 多维表格 | [lark-base](https://github.com/larksuite/cli/blob/cb5a3d704379552dc61e37898e5f74798783190d/skills/lark-base/SKILL.md) |
+| Markdown | [lark-markdown](https://github.com/larksuite/cli/blob/cb5a3d704379552dc61e37898e5f74798783190d/skills/lark-markdown/SKILL.md) |
+| 画板 | [lark-whiteboard](https://github.com/larksuite/cli/blob/cb5a3d704379552dc61e37898e5f74798783190d/skills/lark-whiteboard/SKILL.md)、[更新接口](https://github.com/larksuite/cli/blob/cb5a3d704379552dc61e37898e5f74798783190d/skills/lark-whiteboard/references/lark-whiteboard-update.md) |
+| 会议 | [lark-meeting](https://github.com/larksuite/cli/blob/cb5a3d704379552dc61e37898e5f74798783190d/skills/lark-meeting/SKILL.md) |
+| OKR | [lark-okr](https://github.com/larksuite/cli/blob/cb5a3d704379552dc61e37898e5f74798783190d/skills/lark-okr/SKILL.md) |
+| 应用 | [lark-apps](https://github.com/larksuite/cli/blob/cb5a3d704379552dc61e37898e5f74798783190d/skills/lark-apps/SKILL.md) |
+
 ## 调用规则
 
 - 按任务加载单个技能及必需引用，不预读全部技能。

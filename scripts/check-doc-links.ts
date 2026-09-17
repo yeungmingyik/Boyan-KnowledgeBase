@@ -1,23 +1,10 @@
 import * as fs from 'fs'
 import * as path from 'path'
 
-/**
- * Checks all internal markdown links in docs/ and src/ README files.
- * Validates that relative links point to existing files.
- * Exits with code 1 if any broken links are found.
- */
+import { type BrokenDocLink, checkDocLinks } from './docLinks'
+import { loadSkillDocLinks } from './skillDocLinks'
 
 const ROOT = path.resolve(__dirname, '..')
-
-// Markdown link pattern: [text](url) — exclude external URLs and anchors-only
-const LINK_RE = /\[(?:[^\]]*)\]\(([^)]+)\)/g
-
-interface BrokenLink {
-  file: string
-  line: number
-  link: string
-  resolvedPath: string
-}
 
 function findMarkdownFiles(dir: string): string[] {
   const results: string[] = []
@@ -35,53 +22,7 @@ function findMarkdownFiles(dir: string): string[] {
   return results
 }
 
-function isExternalLink(link: string): boolean {
-  return link.startsWith('http://') || link.startsWith('https://') || link.startsWith('mailto:')
-}
-
-function isAnchorOnly(link: string): boolean {
-  return link.startsWith('#')
-}
-
-function checkFile(filePath: string): BrokenLink[] {
-  const broken: BrokenLink[] = []
-  const content = fs.readFileSync(filePath, 'utf-8')
-  const lines = content.split('\n')
-  const dir = path.dirname(filePath)
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i]
-    let match: RegExpExecArray | null
-
-    LINK_RE.lastIndex = 0
-    while ((match = LINK_RE.exec(line)) !== null) {
-      const rawLink = match[1]
-
-      // Skip external links, anchors, special protocols, and placeholder links
-      if (isExternalLink(rawLink) || isAnchorOnly(rawLink)) continue
-      if (rawLink.includes('<') || rawLink.includes('>')) continue
-
-      // Strip anchor fragment from link
-      const linkPath = rawLink.split('#')[0]
-      if (!linkPath) continue // Was just an anchor
-
-      const resolved = path.resolve(dir, linkPath)
-
-      if (!fs.existsSync(resolved)) {
-        broken.push({
-          file: path.relative(ROOT, filePath),
-          line: i + 1,
-          link: rawLink,
-          resolvedPath: path.relative(ROOT, resolved)
-        })
-      }
-    }
-  }
-
-  return broken
-}
-
-function main() {
+async function main() {
   const scanDirs = ['docs', 'src', 'packages', '.agents'].map((d) => path.join(ROOT, d)).filter((d) => fs.existsSync(d))
 
   let allFiles: string[] = []
@@ -98,13 +39,18 @@ function main() {
 
   console.log(`Checking ${allFiles.length} markdown files for broken links...`)
 
-  const allBroken: BrokenLink[] = []
+  const references = loadSkillDocLinks(ROOT)
+  if (process.argv.includes('--verify-upstream')) await references.verifyUpstream()
+  const allBroken: BrokenDocLink[] = []
   for (const file of allFiles) {
-    allBroken.push(...checkFile(file))
+    allBroken.push(...checkDocLinks(ROOT, file, references.resolve))
   }
+  const referenceCount = references.finish()
 
   if (allBroken.length === 0) {
-    console.log('All links are valid.')
+    process.stdout.write(
+      `Local links are valid; ${referenceCount} optional skill links resolve to pinned upstream sources.\n`
+    )
     process.exit(0)
   }
 
@@ -118,4 +64,7 @@ function main() {
   process.exit(1)
 }
 
-main()
+main().catch((error: unknown) => {
+  process.stderr.write(`${error instanceof Error ? error.message : 'Document link check failed'}\n`)
+  process.exitCode = 1
+})

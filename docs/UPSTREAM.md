@@ -48,6 +48,8 @@
 - 实际：示例被识别为真实链接，命令以退出码 1 失败。
 - 预期：跳过代码示例，继续验证正文中的真实链接。
 - 最小验证：一个 Markdown 文件、一处行内代码示例；原版脚本报告一个错误。
+- 补丁范围：使用 Markdown 语法树提取正文链接，跳过代码示例；覆盖引用式链接、带空格或括号的路径及错误行号。
+- 回归测试：[docLinks.test.ts](../scripts/__tests__/docLinks.test.ts)。
 - 提交准备：在官方当前分支复验，并搜索已有 Issue 和 PR；补充行内代码、代码围栏与正文链接的回归测试。
 - 官方入口：[创建 Issue](https://github.com/CherryHQ/cherry-studio/issues/new/choose)。
 

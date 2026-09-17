@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/larksuite/cli",
+  "revision": "cb5a3d704379552dc61e37898e5f74798783190d",
+  "targets": [
+    {
+      "path": "skills/lark-sheets/SKILL.md",
+      "blob": "83b95fa6ec61d72c70c26d57d4db9b7a0e006cd9"
+    },
+    {
+      "path": "skills/lark-base/SKILL.md",
+      "blob": "092929965a023c2f7e3aec1dab1aa23155fe470a"
+    },
+    {
+      "path": "skills/lark-meeting/SKILL.md",
+      "blob": "0fc65b55196d4b5011731f2636fb4cbef716de0e"
+    },
+    {
+      "path": "skills/lark-whiteboard/SKILL.md",
+      "blob": "9152c32aa9ae766468cb298266a6aec76a4a453f"
+    },
+    {
+      "path": "skills/lark-okr/SKILL.md",
+      "blob": "83a6cebe4dbde13b188b36ed3b8f4f0d1ffe7a8a"
+    },
+    {
+      "path": "skills/lark-whiteboard/references/lark-whiteboard-update.md",
+      "blob": "b2d6f9f94015135ba1c64ad47c3f25cd646cb7c8"
+    },
+    {
+      "path": "skills/lark-apps/SKILL.md",
+      "blob": "461cb32bfa0ad5a4ef65b6df2ee2de356d6083f7"
+    },
+    {
+      "path": "skills/lark-markdown/SKILL.md",
+      "blob": "ce527b96f61ebce3454d61c436c5e3daa318666f"
+    }
+  ],
+  "references": [
+    {
+      "file": ".agents/skills/lark-doc/references/lark-doc-fetch.md",
+      "link": "../../lark-sheets/SKILL.md",
+      "target": "skills/lark-sheets/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-doc/references/lark-doc-fetch.md",
+      "link": "../../lark-base/SKILL.md",
+      "target": "skills/lark-base/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-doc/references/lark-doc-fetch.md",
+      "link": "../../lark-meeting/SKILL.md",
+      "target": "skills/lark-meeting/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-doc/references/lark-doc-whiteboard.md",
+      "link": "../../lark-whiteboard/SKILL.md",
+      "target": "skills/lark-whiteboard/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-doc/references/lark-doc-xml-extended-blocks.md",
+      "link": "../../lark-okr/SKILL.md",
+      "target": "skills/lark-okr/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-doc/SKILL.md",
+      "link": "../lark-whiteboard/references/lark-whiteboard-update.md",
+      "target": "skills/lark-whiteboard/references/lark-whiteboard-update.md"
+    },
+    {
+      "file": ".agents/skills/lark-drive/references/lark-drive-add-comment.md",
+      "link": "../../lark-base/SKILL.md",
+      "target": "skills/lark-base/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-drive/references/lark-drive-update-title.md",
+      "link": "../../lark-apps/SKILL.md",
+      "target": "skills/lark-apps/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-drive/references/lark-drive-upload.md",
+      "link": "../../lark-markdown/SKILL.md",
+      "target": "skills/lark-markdown/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-drive/references/lark-drive-workflow-knowledge-organize-analysis.md",
+      "link": "../../lark-sheets/SKILL.md",
+      "target": "skills/lark-sheets/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-drive/references/lark-drive-workflow-knowledge-organize-analysis.md",
+      "link": "../../lark-base/SKILL.md",
+      "target": "skills/lark-base/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-drive/references/lark-drive-workflow-knowledge-organize.md",
+      "link": "../../lark-sheets/SKILL.md",
+      "target": "skills/lark-sheets/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-drive/references/lark-drive-workflow-knowledge-organize.md",
+      "link": "../../lark-base/SKILL.md",
+      "target": "skills/lark-base/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-drive/references/lark-drive-workflow-topic-move-collector-resolve-verify.md",
+      "link": "../../lark-sheets/SKILL.md",
+      "target": "skills/lark-sheets/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-drive/references/lark-drive-workflow-topic-move-collector.md",
+      "link": "../../lark-sheets/SKILL.md",
+      "target": "skills/lark-sheets/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-drive/SKILL.md",
+      "link": "../lark-markdown/SKILL.md",
+      "target": "skills/lark-markdown/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-drive/SKILL.md",
+      "link": "../lark-sheets/SKILL.md",
+      "target": "skills/lark-sheets/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-drive/SKILL.md",
+      "link": "../lark-base/SKILL.md",
+      "target": "skills/lark-base/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-wiki/SKILL.md",
+      "link": "../lark-sheets/SKILL.md",
+      "target": "skills/lark-sheets/SKILL.md"
+    },
+    {
+      "file": ".agents/skills/lark-wiki/SKILL.md",
+      "link": "../lark-base/SKILL.md",
+      "target": "skills/lark-base/SKILL.md"
+    }
+  ]
+}
