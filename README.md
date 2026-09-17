@@ -1,6 +1,6 @@
 # 博研合作方知识工作台
 
-广东博研文化服务有限公司面向合作方的业务知识工作台，基于 Cherry Studio 开发，面向 Windows 和 macOS。
+广东博研文化服务有限公司面向合作方的业务知识工作台，基于 Cherry Studio 开发，面向 Windows。
 
 合作方可查询博研业务资料、制定城市落地方案、准备合作提案和筹备课程活动。模型服务由使用者自行配置，客户端可继续分发。
 
@@ -38,7 +38,7 @@
 | [架构](docs/ARCHITECTURE.md) | 源码改造边界、数据流和技术决策 |
 | [飞书发布与同步](docs/FEISHU-SYNC.md) | 接入、知识包、增量更新、删除和失败恢复 |
 | [内置智能体](docs/AGENT-CATALOG.md) | 业务角色、输入输出、证据约束和更新策略 |
-| [主题规范](docs/THEME.md) | 视觉语言、页面状态和跨平台交互 |
+| [主题规范](docs/THEME.md) | 视觉语言、页面状态和 Windows 交互 |
 | [开发技能](docs/SKILLS.md) | 技能依赖、来源、版本和调用规则 |
 | [主题工具选型](docs/DESIGN-TOOLS.md) | 设计技能比较和适用范围 |
 | [仓库与许可证](docs/REPOSITORY-AND-LICENSE.md) | fork、独立仓库、上游历史、AGPL 和闭源路径 |

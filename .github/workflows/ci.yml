@@ -251,11 +251,6 @@ jobs:
         include:
           - os: ubuntu-latest
             shards: 3
-          # macOS/Windows run only the platform-gated files (see the test step) —
-          # a small enough set that sharding it would just add runner overhead.
-          - os: macos-latest
-            shard: 1
-            shards: 1
           - os: windows-2022
             shard: 1
             shards: 1
@@ -270,10 +265,6 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version-file: ".node-version"
-
-      - name: macos-latest dependencies fix
-        if: matrix.os == 'macos-latest'
-        run: brew install python-setuptools
 
       - name: Install pnpm
         uses: pnpm/action-setup@v5
