@@ -11,6 +11,7 @@ import {
   RestoreKnowledgeBaseResultSchema,
   RestoreKnowledgeBaseSchema
 } from '@shared/data/types/knowledge'
+import { FeishuImportResultSchema } from '@shared/types/feishuPackage'
 import { AbsoluteFilePathSchema } from '@shared/types/file'
 import * as z from 'zod'
 
@@ -40,6 +41,10 @@ const itemIdsInputSchema = z.strictObject({
 
 // ── Request: renderer→main calls (zod values, always parsed) ──
 export const knowledgeRequestSchemas = {
+  'knowledge.import_feishu_package': defineRoute({
+    input: z.strictObject({ path: AbsoluteFilePathSchema }),
+    output: FeishuImportResultSchema
+  }),
   'knowledge.create_base': defineRoute({
     input: z.strictObject({ base: CreateKnowledgeBaseSchema }),
     output: KnowledgeBaseSchema

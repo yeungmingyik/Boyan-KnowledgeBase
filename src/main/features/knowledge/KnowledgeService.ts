@@ -18,6 +18,7 @@ import type { AbsoluteFilePath } from '@shared/types/file'
 
 import { KnowledgeBaseAdminService } from './base/KnowledgeBaseAdminService'
 import type { OrphanBaseArtifactsInspection } from './base/orphanBaseArtifacts'
+import { FeishuPackageImporter } from './FeishuPackageImporter'
 import { KnowledgeIngestionService } from './ingestion/KnowledgeIngestionService'
 import type {
   KnowledgeConceptContent,
@@ -44,6 +45,7 @@ import type { KnowledgeBaseDiscoveryOptions, KnowledgeBaseDiscoveryPage } from '
 @ServicePhase(Phase.WhenReady)
 @DependsOn(['KnowledgeVectorStoreService', 'JobManager', 'FileProcessingService', 'WebSearchService'])
 export class KnowledgeService extends BaseService {
+  private readonly feishuPackageImporter = new FeishuPackageImporter()
   private readonly knowledgeLockManager = new KeyedMutex()
   private readonly ingestionService = new KnowledgeIngestionService(this.knowledgeLockManager)
   private readonly baseAdmin = new KnowledgeBaseAdminService(this.knowledgeLockManager, this.ingestionService)
@@ -75,6 +77,10 @@ export class KnowledgeService extends BaseService {
 
   async createBase(dto: CreateKnowledgeBaseDto): Promise<KnowledgeBase> {
     return await this.baseAdmin.createBase(dto)
+  }
+
+  async importFeishuPackage(filePath: string) {
+    return this.feishuPackageImporter.importFile(filePath)
   }
 
   async deleteBase(baseId: string): Promise<void> {

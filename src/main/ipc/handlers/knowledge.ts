@@ -15,6 +15,7 @@ import type { IpcHandlersFor } from '@shared/ipc/types'
  * route's `z.void()` output (see selection.ts hide_toolbar).
  */
 export const knowledgeHandlers: IpcHandlersFor<typeof knowledgeRequestSchemas> = {
+  'knowledge.import_feishu_package': async ({ path }) => application.get('KnowledgeService').importFeishuPackage(path),
   'knowledge.create_base': async ({ base }) => application.get('KnowledgeService').createBase(base),
   'knowledge.restore_base': async (dto) => application.get('KnowledgeService').restoreBase(dto),
   'knowledge.delete_base': async ({ baseId }) => {

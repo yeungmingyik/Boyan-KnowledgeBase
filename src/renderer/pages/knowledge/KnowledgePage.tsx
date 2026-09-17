@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
+import FeishuPackageImportButton from './components/FeishuPackageImportButton'
 import { KnowledgePageProvider, useKnowledgePage } from './KnowledgePageProvider'
 import KnowledgePageDetailSection from './sections/KnowledgePageDetailSection'
 import KnowledgePageDialogSection from './sections/KnowledgePageDialogSection'
@@ -39,7 +40,10 @@ const KnowledgePageContent = () => {
 const KnowledgePage = () => {
   return (
     <KnowledgePageProvider>
-      <KnowledgePageContent />
+      <div className="flex min-h-0 min-w-0 flex-1 flex-col">
+        <FeishuPackageImportButton />
+        <KnowledgePageContent />
+      </div>
       <KnowledgePageDialogSection />
     </KnowledgePageProvider>
   )
