@@ -12,6 +12,7 @@
   },
   "scripts": {
     "knowledge:export": "tsx scripts/feishuPublisher.ts",
+    "knowledge:publisher:build": "tsx scripts/buildKnowledgePublisher.ts",
     "start": "pnpm rebuild:electron && electron-vite preview",
     "start:cn": "dotenv -v CHERRY_EDITION=cn -- pnpm start",
     "download:binaries": "node scripts/download-binaries.js",

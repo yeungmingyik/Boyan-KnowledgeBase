@@ -91,6 +91,21 @@ function rethrowAssistantOrderError(error: unknown): never {
 }
 
 export class AssistantDataService {
+  replaceKnowledgeBaseTx(tx: DbOrTx, previousId: string, nextId: string): void {
+    const rows = tx
+      .select()
+      .from(assistantKnowledgeBaseTable)
+      .where(eq(assistantKnowledgeBaseTable.knowledgeBaseId, previousId))
+      .all()
+    for (const row of rows) {
+      tx.insert(assistantKnowledgeBaseTable)
+        .values({ ...row, knowledgeBaseId: nextId })
+        .onConflictDoNothing()
+        .run()
+    }
+    tx.delete(assistantKnowledgeBaseTable).where(eq(assistantKnowledgeBaseTable.knowledgeBaseId, previousId)).run()
+  }
+
   private get db() {
     return application.get('DbService').getDb()
   }

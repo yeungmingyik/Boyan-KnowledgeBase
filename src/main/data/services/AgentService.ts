@@ -244,6 +244,22 @@ function fetchKnowledgeBasesForAgents(tx: DbOrTx, agentIds: string[]): Map<strin
 }
 
 export class AgentService {
+  replaceKnowledgeBaseTx(tx: DbOrTx, previousId: string, nextId: string): string[] {
+    const rows = tx
+      .select()
+      .from(agentKnowledgeBaseTable)
+      .where(eq(agentKnowledgeBaseTable.knowledgeBaseId, previousId))
+      .all()
+    for (const row of rows) {
+      tx.insert(agentKnowledgeBaseTable)
+        .values({ ...row, knowledgeBaseId: nextId })
+        .onConflictDoNothing()
+        .run()
+    }
+    tx.delete(agentKnowledgeBaseTable).where(eq(agentKnowledgeBaseTable.knowledgeBaseId, previousId)).run()
+    return rows.map((row) => row.agentId)
+  }
+
   private readonly _onAgentCreated = new Emitter<AgentCreatedEvent>()
   readonly onAgentCreated: Event<AgentCreatedEvent> = this._onAgentCreated.event
 

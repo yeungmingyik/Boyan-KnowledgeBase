@@ -14,11 +14,13 @@ import type {
   RestoreKnowledgeBaseDto,
   RestoreKnowledgeBaseResult
 } from '@shared/data/types/knowledge'
+import type { FeishuPackage } from '@shared/types/feishuPackage'
 import type { AbsoluteFilePath } from '@shared/types/file'
 
 import { KnowledgeBaseAdminService } from './base/KnowledgeBaseAdminService'
 import type { OrphanBaseArtifactsInspection } from './base/orphanBaseArtifacts'
 import { FeishuPackageImporter } from './FeishuPackageImporter'
+import type { FeishuReleaseIdentity } from './FeishuUpdateRunner'
 import { KnowledgeIngestionService } from './ingestion/KnowledgeIngestionService'
 import type {
   KnowledgeConceptContent,
@@ -45,12 +47,20 @@ import type { KnowledgeBaseDiscoveryOptions, KnowledgeBaseDiscoveryPage } from '
 @ServicePhase(Phase.WhenReady)
 @DependsOn(['KnowledgeVectorStoreService', 'JobManager', 'FileProcessingService', 'WebSearchService'])
 export class KnowledgeService extends BaseService {
-  private readonly feishuPackageImporter = new FeishuPackageImporter()
+  private readonly feishuPackageImporter = new FeishuPackageImporter(
+    () =>
+      application.get('AiStreamManager').listActiveWork().length === 0 &&
+      application.get('AgentSessionRuntimeService').listActiveWork().length === 0
+  )
   private readonly knowledgeLockManager = new KeyedMutex()
   private readonly ingestionService = new KnowledgeIngestionService(this.knowledgeLockManager)
   private readonly baseAdmin = new KnowledgeBaseAdminService(this.knowledgeLockManager, this.ingestionService)
   private readonly queryService = new KnowledgeQueryService()
   private readonly conceptService = new KnowledgeConceptService(this.ingestionService)
+
+  async importSignedFeishuPackage(pack: FeishuPackage, release: FeishuReleaseIdentity, signal: AbortSignal) {
+    return this.feishuPackageImporter.importPackage(pack, release, signal)
+  }
 
   protected onInit(): void {
     const jobManager = application.get('JobManager')

@@ -1,4 +1,5 @@
 // Runtime service API.
+export { FeishuUpdateService } from './FeishuUpdateService'
 export { KnowledgeService } from './KnowledgeService'
 export { KnowledgeVectorStoreService } from './pipeline/vectorstore/KnowledgeVectorStoreService'
 

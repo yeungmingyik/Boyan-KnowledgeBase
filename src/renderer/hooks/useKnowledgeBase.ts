@@ -1,4 +1,5 @@
 import { useInfiniteFlatItems, useInfiniteQuery, useInvalidateCache, useMutation } from '@data/hooks/useDataApi'
+import { useDataChange } from '@data/hooks/useDataChange'
 import { loggerService } from '@logger'
 import { ipcApi } from '@renderer/ipc'
 import type { KnowledgeBaseListItem, UpdateKnowledgeBaseDto } from '@shared/data/api/schemas/knowledges'
@@ -39,6 +40,7 @@ export const useKnowledgeBases = (options: { enabled?: boolean; revalidateOnFocu
     }
   })
   const flatBases = useInfiniteFlatItems(pages)
+  useDataChange(enabled ? '/knowledge-bases' : [], () => void refresh())
   const isFullyLoaded = enabled && pages.length > 0 && !isLoading && !hasNext && !error
   const lastCompleteBasesRef = useRef<KnowledgeBaseListItem[]>(EMPTY_KNOWLEDGE_BASES)
 

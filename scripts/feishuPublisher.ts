@@ -1,48 +1,13 @@
+import { readFile } from 'node:fs/promises'
+import path from 'node:path'
 import { setTimeout as delay } from 'node:timers/promises'
 import { parseArgs } from 'node:util'
 
-import spawn from 'cross-spawn'
-
-import { FEISHU_PACKAGE_MAX_BYTES } from '../src/shared/types/feishuPackage'
+import { createFeishuCliReader } from './feishuCliReader'
 import { publishFeishuPackage } from './publishFeishuPackage'
+import { signFeishuRelease } from './signFeishuRelease'
 
-async function lark<T>(args: string[]): Promise<T> {
-  return new Promise((resolve, reject) => {
-    const child = spawn('lark-cli', [...args, '--as', 'user', '--format', 'json'], {
-      env: { ...process.env, LARKSUITE_CLI_NO_UPDATE_NOTIFIER: '1', LARKSUITE_CLI_NO_SKILLS_NOTIFIER: '1' },
-      windowsHide: true,
-      stdio: ['ignore', 'pipe', 'pipe']
-    })
-    let stdout = ''
-    let stderr = ''
-    const timeout = setTimeout(() => child.kill(), 90_000)
-    child.stdout?.on('data', (chunk) => {
-      stdout += chunk
-      if (stdout.length > FEISHU_PACKAGE_MAX_BYTES) child.kill()
-    })
-    child.stderr?.on('data', (chunk) => {
-      stderr = (stderr + chunk).slice(-8192)
-    })
-    child.on('error', reject)
-    child.on('close', (code) => {
-      clearTimeout(timeout)
-      try {
-        const response = JSON.parse(code === 0 ? stdout : stderr)
-        if (code !== 0 || response.ok !== true) {
-          reject(
-            new Error(
-              `Feishu read failed: ${response.error?.type ?? 'unknown'}/${response.error?.subtype ?? 'unknown'}`
-            )
-          )
-          return
-        }
-        resolve(response.data as T)
-      } catch {
-        reject(new Error(`Feishu CLI failed (${code ?? 'terminated'}). Check lark-cli auth status.`))
-      }
-    })
-  })
-}
+const lark = createFeishuCliReader()
 
 async function main(): Promise<void> {
   const { values } = parseArgs({
@@ -53,7 +18,12 @@ async function main(): Promise<void> {
       watch: { type: 'boolean', default: false },
       interval: { type: 'string', default: '600' },
       'include-linked-documents': { type: 'boolean', default: false },
-      'accept-removals-from': { type: 'string' }
+      'accept-removals-from': { type: 'string' },
+      'release-directory': { type: 'string' },
+      'signing-key': { type: 'string' },
+      'key-id': { type: 'string' },
+      'distribution-id': { type: 'string', default: 'boyan-partner' },
+      'min-app-version': { type: 'string', default: '2.0.14' }
     }
   })
   if (!values.wiki || !values.output)
@@ -64,6 +34,18 @@ async function main(): Promise<void> {
   if (values.watch && values['accept-removals-from'])
     throw new Error('--accept-removals-from is only allowed for a single export')
   const stop = new AbortController()
+  if (values['release-directory'] && (!values['signing-key'] || !values['key-id']))
+    throw new Error('Signed publication requires --signing-key and --key-id')
+  if ((values['signing-key'] || values['key-id']) && !values['release-directory'])
+    throw new Error('Signing requires --release-directory')
+  if (values['signing-key']) {
+    if (!path.isAbsolute(values['signing-key'])) throw new Error('Signing key requires an absolute path')
+    for (const root of [process.cwd(), path.resolve(values['release-directory']!)]) {
+      const relative = path.relative(root, values['signing-key'])
+      if (relative === '' || (!relative.startsWith(`..${path.sep}`) && relative !== '..' && !path.isAbsolute(relative)))
+        throw new Error('Signing key must be outside the repository and release directory')
+    }
+  }
   const stopWatching = () => stop.abort()
   process.on('SIGINT', stopWatching)
   process.on('SIGTERM', stopWatching)
@@ -80,7 +62,17 @@ async function main(): Promise<void> {
           },
           lark
         )
-        process.stdout.write(`${JSON.stringify({ time: new Date().toISOString(), ...result })}\n`)
+        const release = values['release-directory']
+          ? await signFeishuRelease({
+              packagePath: values.output,
+              directory: values['release-directory'],
+              privateKey: await readFile(values['signing-key']!, 'utf8'),
+              keyId: values['key-id']!,
+              distributionId: values['distribution-id'],
+              minAppVersion: values['min-app-version']
+            })
+          : undefined
+        process.stdout.write(`${JSON.stringify({ time: new Date().toISOString(), ...result, release })}\n`)
       } catch (error) {
         if (!values.watch) throw error
         process.stderr.write(

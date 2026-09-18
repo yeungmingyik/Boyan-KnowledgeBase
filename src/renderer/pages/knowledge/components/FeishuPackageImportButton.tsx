@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { useKnowledgePage } from '../KnowledgePageProvider'
+import FeishuUpdateButton from './FeishuUpdateButton'
 
 export default function FeishuPackageImportButton() {
   const { t } = useTranslation()
@@ -39,6 +40,7 @@ export default function FeishuPackageImportButton() {
 
   return (
     <div className="flex flex-wrap items-center gap-3 border-border border-b px-3 py-2">
+      <FeishuUpdateButton />
       <Button variant="outline" size="sm" disabled={busy} onClick={importPackage}>
         {busy ? <LoaderCircle className="size-4 animate-spin" /> : <FileDown className="size-4" />}
         {t(busy ? 'knowledge.feishu_import.busy' : 'knowledge.feishu_import.title')}

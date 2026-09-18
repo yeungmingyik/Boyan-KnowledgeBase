@@ -22,6 +22,7 @@ export const FeishuPackageSchema = z.strictObject({
 
 export const FeishuImportResultSchema = z.strictObject({
   baseId: z.uuidv4(),
+  previousBaseId: z.uuidv4().optional(),
   packId: z.string(),
   importedCount: z.number().int().nonnegative(),
   emptyCount: z.number().int().nonnegative(),

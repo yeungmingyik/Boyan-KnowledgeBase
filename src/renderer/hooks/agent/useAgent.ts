@@ -45,6 +45,7 @@ export const useAgent = (id: string | null) => {
       keepPreviousData: false
     }
   })
+  useDataChange(id ? '/agents/:agentId' : [], () => void refetch(), { routeParams: { agentId: id ?? '' } })
   const agent = useMemo((): AgentEntity | undefined => {
     if (!data) return undefined
     return {

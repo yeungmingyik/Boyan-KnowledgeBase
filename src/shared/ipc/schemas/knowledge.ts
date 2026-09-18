@@ -12,6 +12,7 @@ import {
   RestoreKnowledgeBaseSchema
 } from '@shared/data/types/knowledge'
 import { FeishuImportResultSchema } from '@shared/types/feishuPackage'
+import { FeishuUpdateStatusSchema } from '@shared/types/feishuUpdate'
 import { AbsoluteFilePathSchema } from '@shared/types/file'
 import * as z from 'zod'
 
@@ -41,6 +42,12 @@ const itemIdsInputSchema = z.strictObject({
 
 // ── Request: renderer→main calls (zod values, always parsed) ──
 export const knowledgeRequestSchemas = {
+  'knowledge.feishu_update.install': defineRoute({
+    input: z.strictObject({ sequence: z.number().int().positive() }),
+    output: FeishuUpdateStatusSchema
+  }),
+  'knowledge.feishu_update.check': defineRoute({ input: z.void(), output: FeishuUpdateStatusSchema }),
+  'knowledge.feishu_update.status': defineRoute({ input: z.void(), output: FeishuUpdateStatusSchema }),
   'knowledge.import_feishu_package': defineRoute({
     input: z.strictObject({ path: AbsoluteFilePathSchema }),
     output: FeishuImportResultSchema

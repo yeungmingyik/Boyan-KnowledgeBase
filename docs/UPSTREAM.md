@@ -55,6 +55,30 @@
 
 第三方飞书技能中指向未引入业务域的可选路由属于独立的依赖范围问题，不能统一当作示例链接跳过。
 
+### 后台知识变更的界面刷新
+
+- 类别：Contribute Code。
+- 基线：v2.0.14，`d33b9b0266bda30d0e4715ae16650eee7b845d70`。
+- 位置：[useKnowledgeBase.ts](../src/renderer/hooks/useKnowledgeBase.ts)、[useAssistant.ts](../src/renderer/hooks/useAssistant.ts)、[useAgent.ts](../src/renderer/hooks/agent/useAgent.ts)。
+- 触发：主进程完成知识版本切换和助手绑定迁移，广播对应 DataApi 读模型变更。
+- 实际：缺少订阅的已挂载知识列表与助手详情继续显示缓存；切换页面或主动刷新后才显示新数据。
+- 改进：通过现有 `useDataChange` 订阅知识列表、助手列表和详情、智能体详情；禁用查询时不订阅，详情按实体 ID 过滤。
+- Windows 复现：签名知识更新成功后，主进程检索和助手绑定已变更，知识页面仍显示上一版列表。
+- 提交准备：在官方当前分支确认对应订阅是否已补齐；保留通用 hooks 修改和独立回归测试，不包含飞书发行配置。
+- 官方入口：[Issue 列表](https://github.com/CherryHQ/cherry-studio/issues)、[PR 列表](https://github.com/CherryHQ/cherry-studio/pulls)。
+
+### Windows 发布流程测试兼容性
+
+- 类别：Fix Bugs。
+- 位置：[release-workflow.test.ts](../scripts/__tests__/release-workflow.test.ts)。
+- 环境：Windows x64、Node.js 24、Git for Windows。
+- 复现：运行 `pnpm exec vitest run --project scripts scripts/__tests__/release-workflow.test.ts`。
+- 实际：`GIT_CONFIG_GLOBAL=os.devNull` 在 Windows 下展开为 `\\.\nul`，Git 拒绝读取该路径，依赖临时 Git 仓库的测试失败。
+- 排查：临时改用 `NUL` 后，71 项测试中 67 项通过；剩余失败涉及可执行位夹具、Windows Bash 环境变量和超时。
+- 补丁要求：使用跨平台的空 Git 配置文件；通过 Git 索引构造可执行位；为工作流 Bash 片段提供一致的 shell、路径和环境。
+- 提交准备：在官方当前分支复验，分别验证 Windows 和 Linux；不跳过测试或修改产品发布流程来掩盖夹具问题。
+- 官方入口：[创建 Issue](https://github.com/CherryHQ/cherry-studio/issues/new/choose)。
+
 ### 内容要求
 
 Issue 草稿包含具体问题、受影响版本、最小复现、实际与预期、验证过的环境及证据。PR 草稿遵循提交时官方模板，列出行为变化、必要测试和用户影响。

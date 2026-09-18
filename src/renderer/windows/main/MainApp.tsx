@@ -23,6 +23,7 @@ import { lazy, Suspense, useEffect, useMemo } from 'react'
 
 import { useAppUpdateHandler } from './hooks/useAppUpdateHandler'
 import { useAutoBackupEvents } from './hooks/useAutoBackupEvents'
+import { useFeishuUpdateNotification } from './hooks/useFeishuUpdateNotification'
 import { useTopicNamingErrorNotification } from './hooks/useTopicNamingErrorNotification'
 import { PrivacyPolicyUpdateGate } from './privacy/PrivacyPolicyUpdateGate'
 
@@ -77,6 +78,7 @@ function MainWindowRuntime(): null {
   }, [])
 
   useAppUpdateHandler()
+  useFeishuUpdateNotification()
   useAutoBackupEvents()
   useStorageMonitorNotification()
   useTopicNamingErrorNotification()

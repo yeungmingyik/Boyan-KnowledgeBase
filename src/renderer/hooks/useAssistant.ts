@@ -17,6 +17,7 @@
  */
 
 import { useMutation, useQuery } from '@data/hooks/useDataApi'
+import { useDataChange } from '@data/hooks/useDataChange'
 import { usePreference } from '@data/hooks/usePreference'
 import { loggerService } from '@logger'
 import { useModelById } from '@renderer/hooks/useModel'
@@ -51,6 +52,7 @@ export function useAssistantsApi(options: { enabled?: boolean } = {}) {
     enabled: options.enabled ?? true,
     query: { limit: ASSISTANTS_LIST_LIMIT }
   })
+  useDataChange(options.enabled === false ? [] : '/assistants', () => void refetch())
 
   return {
     assistants: data?.items ?? EMPTY_ASSISTANTS,
@@ -73,6 +75,7 @@ export function useAssistantApiById(id: string | undefined) {
     enabled: !!id,
     swrOptions: { keepPreviousData: false }
   })
+  useDataChange(id ? '/assistants/:id' : [], () => void refetch(), { routeParams: { id: id ?? '' } })
 
   return {
     assistant: data,

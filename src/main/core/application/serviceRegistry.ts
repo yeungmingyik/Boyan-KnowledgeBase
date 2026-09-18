@@ -28,7 +28,7 @@ import { UtilityProcessManager } from '@main/core/utilityProcess/UtilityProcessM
 import { WindowManager } from '@main/core/window/WindowManager'
 import { ApiGatewayService } from '@main/features/apiGateway/ApiGatewayService'
 import { FileProcessingService, TesseractRuntimeService } from '@main/features/fileProcessing'
-import { KnowledgeService, KnowledgeVectorStoreService } from '@main/features/knowledge'
+import { FeishuUpdateService, KnowledgeService, KnowledgeVectorStoreService } from '@main/features/knowledge'
 import { MiniAppRuntimeService } from '@main/features/miniApp/runtime/MiniAppRuntimeService'
 import { IpcApiService } from '@main/ipc/IpcApiService'
 import { AnalyticsService } from '@main/services/AnalyticsService'
@@ -157,6 +157,7 @@ export const services = {
   OcrInferenceService,
   LocalModelService,
   KnowledgeService,
+  FeishuUpdateService,
   KnowledgeVectorStoreService,
   MiniAppRuntimeService,
   ApiGatewayService,
